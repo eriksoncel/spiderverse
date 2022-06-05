@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root{
+    --color-primary: whitesmoke;
+    --color-secondary: #0d56a3;
+    --bg-card-info: linear-gradient(60deg, #0d56a3 0%, #e70c0c 100%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    background-color: var(--color-primary);
+}
+
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Apresentação */
+
+#s-header{
+    background-image: url(../../assets/images/sv-background.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+#s-header h1{
+    display: block;
+    width: fit-content;
+    font-size: 5rem;
+    position: relative;
+    color: transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+#s-header h1:nth-child(1){
+    animation-delay: .8s;
+}
+
+#s-header h1:nth-child(2){
+    animation-delay: 1.8s;
+}
+
+#s-header h1:nth-child(3){
+    animation: text_reveal_name .5s ease forwards;
+    animation-delay: 2.8s;
+}
+
+#s-header .cta{
+    display: inline-block;
+    padding: 10px 30px;
+    color: var(--color-primary);
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 20px;
+    transition: .5s ease;
+    transition-property: background-color, color;
+}
+
+#s-header .cta:hover{
+    color: var(--color-secondary);
+    font-weight: 500;
+    background-color: var(--color-primary);
+}
+
+#s-header h1 span{
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100%;
+    width: 0%;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+    background-color: var(--color-secondary);
+}
+
+#s-header h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+
+#s-header h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+
+#s-header h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+#s-header::after{
+    content: '';
+    position: absolute;
+    left:0;
+    top: 0;
+    height:100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+/* Keyframes */
+
+@keyframes text_reveal{
+    100%{
+        color: var(--color-primary);
+    }
+}
+@keyframes text_reveal_name{
+    100%{
+        color: var(--color-secondary);
+        font-weight: 500px;
+    }
+}
+
+@keyframes text_reveal_box{
+    50%{
+        width:100%;
+        left:0;
+    }
+    100%{
+        width: 0;
+        left:100%
+    }
+}
