@@ -272,3 +272,38 @@ p {
 
 
 }
+
+/* Footer */
+
+footer .s-footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    height: 100%;
+    padding: 10px;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.s-footer p{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.s-footer img{
+    vertical-align: middle;
+    margin: auto;
+    height: 24px;
+    width: 24px;
+}
+
+.s-footer a{
+    padding-left: 3px;
+    color: var(--color-primary);
+}
+
+.s-footer a:hover{
+    text-decoration: none;
+    color: unset;
+}
