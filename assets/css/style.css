@@ -4,6 +4,7 @@
     --color-primary: whitesmoke;
     --color-secondary: #0d56a3;
     --bg-card-info: linear-gradient(60deg, #0d56a3 0%, #e70c0c 100%);
+    --main-title: rgb(197, 20, 20);
 }
 
 *{
@@ -157,4 +158,117 @@ p {
         width: 0;
         left:100%
     }
+}
+
+/* Seção  Principal */
+
+#s-main .s-main--header h1{
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--main-title);
+    margin-bottom: 10px;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+#s-main h1{
+    margin-bottom: 50px;
+}
+
+#s-main .s-main--header, .s-cards{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+#s-main .s-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#s-main .s-card--item{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#s-main .s-card--info{
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: var(--bg-card-info);
+    color: var(--color-primary);
+}
+
+#s-main .s-card--info h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#s-main .s-card--info h2{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#s-main .s-card--img{
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#s-main .s-card--img::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: 0.6;
+}
+
+#s-main .s-card--img img{
+    transition: 0.5s ease transform;
+}
+
+#s-main .s-card--item:hover .s-card--img img{
+    transform: scale(1.1);
+}
+
+/* Media Query */
+@media only screen and (min-width: 768px) {
+    #s-main .s-card--item {
+        flex-direction: row;
+        height: 400px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+    #s-main .s-cards .sv-card--info{
+        height: 100%
+    }
+    #s-main .s-cards .s-card--img{
+        height: 100%
+    }
+    #s-main .s-card--item:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+
 }
